@@ -1,7 +1,7 @@
 const AnnounceBar = () => {
   return ( 
-    <div >
-      <h4 > Announcement bar </h4> 
+    <div className="announcement_bar">
+      <h4 className="announcement_bar-title">Announcement bar</h4> 
     </div>
   );
 }

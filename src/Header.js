@@ -3,7 +3,7 @@ import NavMenu from './NavMenu.js';
 
 const Header = () => {
   return (
-    <header>
+    <header className='header'>
       <TopBar/>
       <NavMenu/>
     </header>

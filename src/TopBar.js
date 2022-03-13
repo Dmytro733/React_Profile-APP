@@ -4,10 +4,12 @@ import SearchInput from './SearchInput.js';
 
 const TopBar = () => {
   return (
-    <div>
-      <Logo/>
-      <ContentTopBar/>
-      <SearchInput/>
+    <div className='container'>
+      <div className='top_bar_wrap'>
+        <Logo/>
+        <ContentTopBar/>
+        <SearchInput/>
+      </div>
     </div>
   );
 };

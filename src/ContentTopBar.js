@@ -1,13 +1,8 @@
 
 const ContentTopBar = () => {
   return (
-    <div>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+    <div className="content-top-bar_wrap">
+      <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
         Learn React
       </a>
     </div>

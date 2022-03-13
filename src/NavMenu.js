@@ -1,12 +1,14 @@
 const NawMenu = () => {
     return (
-      <div>
-        <ul>
-          <li>Home</li>
-          <li>Blog</li>
-          <li>Catalog</li>
-          <li>About</li>
-        </ul>
+      <div className="naw_menu">
+        <div className='container'>
+          <ul className="naw_items">
+            <li className="naw_item active"> <a href="#">Home</a></li>
+            <li className="naw_item"> <a href="#">Blog</a></li>
+            <li className="naw_item"> <a href="#">Catalog</a></li>
+            <li className="naw_item"> <a href="#">About</a></li>
+          </ul>
+        </div>
       </div>
     );
   }
