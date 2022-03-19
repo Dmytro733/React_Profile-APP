@@ -1,0 +1,13 @@
+.announcement_bar{
+  background: black;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #2e563b;
+}
+
+.announcement_bar_title{
+  color: white;
+  font-family: inherit;
+  text-transform: uppercase;
+  text-shadow: 0px 3px 5px white;
+}

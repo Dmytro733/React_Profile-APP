@@ -1,17 +1,22 @@
 import './App.css';
-import Header from './Header.js';
-import AnnouncmenteBar from './AnnouncementBar.js';
+import AnnouncmenteBar from './components/AnnouncementBar';
+import Header from './components/Header';
+import NavMenu from './components/NavMenu';
+import Profile from './components/Profile';
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="App-wrap">
       <AnnouncmenteBar/>
-      <Header/>
+      <div className="container">
+        <div className="App">
+          <Header/>
+          <NavMenu/>
+          <Profile/>
+        </div>
+      </div>
     </div>
   );
 }
-
-
-
 
 export default App;

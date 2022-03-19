@@ -1,0 +1,37 @@
+.content{
+  border-radius: 5px;
+  padding: 10px;
+  grid-area: content-main;
+}
+
+.content .content_img{
+  max-height: 250px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.content .content_img img{
+  width: inherit;
+}
+
+.author_info{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.author_photo{
+  width: 200px;
+  height: 200px;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.author_photo img{
+  height: 100%;
+  position: absolute;
+  left: -40px;
+}
