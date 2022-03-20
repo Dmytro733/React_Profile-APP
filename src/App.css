@@ -30,7 +30,7 @@ a{
   grid-template-areas: 
     "header header"
     "nav content-main";
-  grid-template-rows: 60px 1fr;
+  grid-template-rows: 95px 1fr;
   grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
 }

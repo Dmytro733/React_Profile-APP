@@ -4,7 +4,6 @@
   text-transform: uppercase;
   grid-area: header;
   display: flex;
-  margin-top: 20px;
 }
 
 .logo_header{

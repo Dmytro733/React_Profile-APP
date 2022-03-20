@@ -1,8 +1,8 @@
 import './App.css';
-import AnnouncmenteBar from './components/AnnouncementBar';
-import Header from './components/Header';
-import NavMenu from './components/NavMenu';
-import Profile from './components/Profile';
+import AnnouncmenteBar from './components/Announcement-Bar/AnnouncementBar';
+import Header from './components/Header/Header';
+import NavMenu from './components/Nav-Menu/NavMenu';
+import Profile from './components/Profile/Profile';
 
 const App = () => {
   return (
