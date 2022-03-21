@@ -41,8 +41,9 @@
   font-weight: 700;
 }
 
-.author_name{
-  color: #a5cdaa;
+.author_name{ 
+  color: black;
+  text-shadow: 0px 0px 20px #dbdbdb;
   font-size: 30px;
 }
 

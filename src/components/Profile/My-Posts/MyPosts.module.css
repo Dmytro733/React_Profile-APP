@@ -47,3 +47,13 @@
   border: 1px solid #2e563b;
   cursor: pointer;
 }
+
+.post_items{}
+
+.posts_header{
+  color: #36a045;
+  font-family: inherit;
+  text-transform: uppercase;
+  text-shadow: 0px 3px 10px #bcdfbc;
+  font-weight: 700;
+}
