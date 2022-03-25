@@ -4,8 +4,8 @@ import style from "./Profile.module.css";
 
 const Profile = () => {
   return (
-    <div className={style.content}>
-      <div className={style.content_img}>
+    <div className={style.profile_content}>
+      <div className={style.profile_content_img}>
         <img src="https://img3.goodfon.com/wallpaper/nbig/0/56/doom-dos-code.jpg" alt="" />
       </div>
       <div className={style.post_info}>

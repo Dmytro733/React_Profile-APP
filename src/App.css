@@ -41,3 +41,11 @@ a{
   margin-right: auto;
   padding: 0 20px;
 }
+
+.App_wrap_content{
+  padding: 10px;
+  grid-area: content-main;
+  border-radius: 5px;
+  border: 1px solid #2e563b;
+  background: #0c334278;
+}

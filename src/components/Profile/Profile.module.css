@@ -1,18 +1,10 @@
-.content{
-  padding: 10px;
-  grid-area: content-main;
-  border-radius: 5px;
-  border: 1px solid #2e563b;
-  background: #0c334278;
-}
-
-.content .content_img{
+.profile_content .profile_content_img{
   max-height: 250px;
   overflow: hidden;
   width: 100%;
   margin-bottom: 30px;
 }
 
-.content .content_img img{
+.profile_content .profile_content_img img{
   width: inherit;
 }
