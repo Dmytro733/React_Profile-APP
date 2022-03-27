@@ -1,9 +1,17 @@
 .header{
-  color: black;
-  font-family: cursive;
+  font-family: initial;
   text-transform: uppercase;
-  grid-area: header;
+  position: sticky;
+  top: 0;
+  border-bottom: 3px solid #ffdd00;
+  background: #b436a2;
+  z-index: 10;
+}
+
+.header_content{
   display: flex;
+  height: 90px;
+  align-items: center;
 }
 
 .logo_header{

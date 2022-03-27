@@ -3,7 +3,6 @@ import './App.css';
 import AnnouncmenteBar from './components/Announcement-Bar/AnnouncementBar';
 import Dialogs from './components/Dialogs/Dialogs';
 import Header from './components/Header/Header';
-import NavMenu from './components/Nav-Menu/NavMenu';
 import Profile from './components/Profile/Profile';
 
 const App = () => {
@@ -11,10 +10,9 @@ const App = () => {
     <BrowserRouter>
       <div className="App-wrap">
         <AnnouncmenteBar/>
+        <Header/>
         <div className="container">
           <div className="App">
-            <Header/>
-            <NavMenu/>
               <div className='App_wrap_content'>
                 <Routes>
                   <Route index path="/profile" element={ <Profile/> } />

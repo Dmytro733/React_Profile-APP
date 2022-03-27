@@ -1,18 +1,17 @@
 .nav{
-  grid-area: nav;
-  background: #0c334278;
-  border-radius: 5px;
-  border: 1px solid #2e563b;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav_item{
   text-align: left;
-  margin-top: 20px;
   margin-left: 20px;
 }
 
 .nav_item a{
-  color: #36a045;
+  color: #000;
   font-family: inherit;
   text-transform: uppercase;
   text-shadow: 0px 3px 10px #bcdfbc;
@@ -21,7 +20,8 @@
 }
 
 .nav_item a span{
-  color: #a5cdaa;
-  font-family: cursive;
-  font-size: 20px;
+  color: #000000;
+  font-family: system-ui;
+  font-size: 25px;
+  font-weight: 100;
 }

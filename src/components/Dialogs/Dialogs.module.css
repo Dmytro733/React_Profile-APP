@@ -1,0 +1,25 @@
+.dialogs_wrap{
+    
+}
+
+.dialogs{
+    display: grid;
+    grid-template-areas: "dialogs-items messages";
+    grid-template-columns: 4fr 8fr;
+}
+
+.dialogs_items{
+    grid-area: dialogs-items;
+}
+
+.dialog{
+
+}
+
+.messages{
+    grid-area: messages;
+}
+
+.message{
+
+}
