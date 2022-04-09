@@ -11,12 +11,16 @@ const App = () => {
       <div className="App-wrap">
         <AnnouncmenteBar/>
         <Header/>
+        <div className="content_img">
+          <div></div>
+          <div></div>
+        </div>
         <div className="container">
           <div className="App">
               <div className='App_wrap_content'>
                 <Routes>
                   <Route index path="/profile" element={ <Profile/> } />
-                  <Route path="/dialogs" element={<Dialogs />} />
+                  <Route path="/dialogs" element={ <Dialogs />} />
                 </Routes>
               </div>
           </div>

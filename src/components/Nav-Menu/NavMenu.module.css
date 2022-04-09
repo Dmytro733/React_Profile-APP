@@ -1,5 +1,4 @@
 .nav{
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +10,7 @@
 }
 
 .nav_item a{
-  color: #000;
+  color: #fff;
   font-family: inherit;
   text-transform: uppercase;
   text-shadow: 0px 3px 10px #bcdfbc;
@@ -20,7 +19,7 @@
 }
 
 .nav_item a span{
-  color: #000000;
+  color: #00aeef;
   font-family: system-ui;
   font-size: 25px;
   font-weight: 100;

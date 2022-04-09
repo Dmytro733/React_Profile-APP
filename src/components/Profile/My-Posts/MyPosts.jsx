@@ -8,6 +8,8 @@ const MyPosts = () => {
     {avatar: "https://www.themoviedb.org/t/p/w235_and_h235_face/wo2hJpn04vbtmh0B9utCFdsQhxM.jpg", name: "Leonardo Dicaprio", message: "Lorem adipisicing elit.", likeCount: 7 }
   ];
 
+  let PostsElements = PostsData.map(post => <Post avatar={post.avatar} name={post.name} message={post.message} />)
+
   return (
     <div className={style.posts}>
       <div className={style.author_post}>
@@ -21,8 +23,7 @@ const MyPosts = () => {
       </div>
       <div className={style.post_items}>
         <h3 className={style.posts_header}>Customers posts</h3>
-        <Post avatar={PostsData[0].avatar} name={PostsData[0].name} message={PostsData[0].message} />
-        <Post avatar={PostsData[1].avatar} name={PostsData[1].name} message={PostsData[1].message} />
+        {PostsElements}
       </div>
     </div>
   );

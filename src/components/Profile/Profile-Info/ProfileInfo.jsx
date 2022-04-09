@@ -3,9 +3,6 @@ import style from "./ProfileInfo.module.css";
 const AuthorInfo = () => {
   return (
     <div className={style.profile_content}>
-      <div className={style.profile_content_img}>
-        <img src="https://img3.goodfon.com/wallpaper/nbig/0/56/doom-dos-code.jpg" alt="" />
-      </div>
       <div className={style.author_info}>
         <div className={style.author_photo_wrap}>
           <div className={style.author_photo}>
