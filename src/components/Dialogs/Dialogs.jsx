@@ -4,8 +4,8 @@ import MessageItem from "./Message/Message";
 
 
 const Dialogs = (props) => {
-  let DialogsElements = props.DialogsData.map(dialog => <DialogItem key={dialog.id} name={dialog.name} id={dialog.id} />)
-  let MessagesElements = props.MessagesData.map(message => <MessageItem key={message.id} message={message.message} id={message.id} />)
+  let DialogsElements = props.DirectPage.DialogsData.map(dialog => <DialogItem key={dialog.id} name={dialog.name} id={dialog.id} />)
+  let MessagesElements = props.DirectPage.MessagesData.map(message => <MessageItem key={message.id} message={message.message} id={message.id} />)
 
   return (
     <div className={style.dialogs_wrap}>
