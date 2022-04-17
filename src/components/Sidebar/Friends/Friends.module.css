@@ -1,0 +1,42 @@
+a{
+    color: black;
+}
+
+.friends_items{
+    background: #e7eef387;
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+    border-radius: 5px;
+}
+
+.friend_item{
+    text-align: center;
+}
+
+.friend_item>div{
+    width: 80px;
+    height: 80px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.friend_item>div img{
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.friends_items .link_to_profile:hover img{
+    transition: opacity 0.5s;
+    opacity: 0.5;
+}
+
+.friend_item span{
+    font-weight: 600;
+}

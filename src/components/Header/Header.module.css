@@ -2,10 +2,11 @@
   font-family: sans-serif;
   text-transform: uppercase;
   position: sticky;
-  top: 0;
+  top: var(--announcement-bar);
   border-bottom: 3px solid #ffdd00;
   background: #0a2b48;
   z-index: 10;
+  grid-area: header;
 }
 
 .header_content{

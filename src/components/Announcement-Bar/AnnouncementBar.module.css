@@ -1,8 +1,12 @@
 .announcement_bar{
+  position: sticky;
+  top: 0;
+  z-index: 10;
   background: black;
   padding: 10px;
   text-align: center;
   border-bottom: 1px solid #2e563b;
+  grid-area: announcement;
 }
 
 .announcement_bar_title{
@@ -10,4 +14,5 @@
   font-family: inherit;
   text-transform: uppercase;
   text-shadow: 0px 3px 5px white;
+  margin: 0;
 }

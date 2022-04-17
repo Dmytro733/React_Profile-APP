@@ -1,0 +1,18 @@
+.sidebar{
+    grid-area: sidebar;
+    position: relative;
+    padding-top: 10px;
+}
+
+.sidebar::before{
+    content: "";
+    width: 2px;
+    height: 80vh;
+    background: #ffffff8c;
+    position: fixed;
+    top: calc(var(--header) + var(--announcement-bar) + 25px);
+}
+
+.sidebar>div{
+    padding: 10px;
+}

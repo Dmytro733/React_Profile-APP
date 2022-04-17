@@ -10,10 +10,54 @@
 
 .dialogs_items{
     grid-area: dialogs-items;
+    margin-right: 20px;
 }
 
 .dialog{
+    display: flex;
+    align-items: center;
+    color: black;
+    position: relative;
+    transition: all 0.5s;
+    margin-bottom: 10px;
+    padding: 10px;
+}
 
+.dialog>div{
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 50px;
+    margin-right: 20px;
+}
+
+.dialog>div .dialog_avatar{
+    position: absolute;
+    height: 100%;
+}
+
+.dialog::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0px;
+    border-radius: 50px;
+    width: 0%;
+    height: 100%;
+    bottom: 0;
+    background: #ffffff40;
+    transition: all 0.5s;
+}
+
+.dialog:hover{
+    font-weight: 600;
+    transition: all 0.5s;
+}
+
+.dialog:hover::after{
+    width: 100%;
+    transition: all 0.5s;
 }
 
 .messages{
@@ -21,5 +65,22 @@
 }
 
 .message{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;    
+}
 
+.messages .not_read{
+    font-weight: 600;
+}
+
+.messages .message .text,
+.messages .typing .typing_active{
+    display: block;
+}
+
+.messages .message .typing_active,
+.messages .typing .text{
+    display: none;
 }

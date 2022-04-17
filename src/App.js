@@ -4,6 +4,7 @@ import AnnouncmenteBar from './components/Announcement-Bar/AnnouncementBar';
 import Dialogs from './components/Dialogs/Dialogs';
 import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
+import Sidebar from './components/Sidebar/Sidebar';
 
 const App = (props) => {
   return (
@@ -15,14 +16,17 @@ const App = (props) => {
           <div></div>
           <div></div>
         </div>
-        <div className="container">
-          <div className="App">
-              <div className='App_wrap_content'>
-                <Routes>
-                  <Route index path="/profile" element={ <Profile ProfilePage={props.state.ProfilePage} /> } />
-                  <Route path="/dialogs" element={ <Dialogs DirectPage={props.state.DirectPage} />} />
-                </Routes>
-              </div>
+        <Sidebar Sidebar={props.state.Sidebar} />
+        <div className='main_content'>
+          <div className="container">
+            <div className="App">
+                <div className='App_wrap_content'>
+                  <Routes>
+                    <Route index path="/profile" element={ <Profile ProfilePage={props.state.ProfilePage} /> } />
+                    <Route path="/dialogs" element={ <Dialogs DirectPage={props.state.DirectPage} />} />
+                  </Routes>
+                </div>
+            </div>
           </div>
         </div>
       </div>
