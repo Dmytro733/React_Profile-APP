@@ -84,3 +84,37 @@
 .messages .typing .text{
     display: none;
 }
+
+.messages .typing_message{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.messages .typing_message textarea{
+    width: 50%;
+    border-radius: 8px;
+    border: none;
+    padding: 10px 10px;
+    background: #ffffff8c;
+}
+
+.messages .typing_message textarea:focus-visible{
+    outline: none;
+}
+
+.messages .typing_message button{
+    padding: 10px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background: #1571bf;
+    color: white;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.messages .typing_message button:hover{
+    background: #1571bf85;
+    transition: all 0.5s;
+}
