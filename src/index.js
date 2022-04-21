@@ -1,10 +1,21 @@
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import state from './redux/state'
-import {renderDOM} from './render';
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import state, { objectFunctions } from "./redux/state";
 
-renderDOM(state);
+let renderDOM = () => {
+  ReactDOM.render(
+    <React.StrictMode>
+      <App state={state} objectFunctions={objectFunctions} />
+    </React.StrictMode>,
+    document.getElementById("root")
+  );
+};
 
+renderDOM();
+objectFunctions.rerender(renderDOM);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

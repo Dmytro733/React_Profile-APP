@@ -1,9 +1,20 @@
+import React from "react";
 import style from "./MyPosts.module.css";
 import Post from "./Post/Post";
 
 const MyPosts = (props) => {
 
-  let PostsElements = props.PostsData.map(post => <Post key={post.id} avatar={post.avatar} name={post.name} message={post.message} likeCount={post.likeCount} />)
+  let newPostElement = React.createRef();
+
+  let addNewPost = () => {
+    props.objectFunctions_ProfilePage.addNewPost();
+  }
+
+  let updateNewPostText = () => {
+    props.objectFunctions_ProfilePage.updateNewPostText(newPostElement.current.value);
+  }
+
+  let PostsElements = props.ProfilePage.PostsData.map(post => <Post key={post.id} avatar={post.avatar} name={post.name} message={post.message} likeCount={post.likeCount} />)
 
   return (
     <div className={style.posts}>
@@ -12,8 +23,8 @@ const MyPosts = (props) => {
           <span>my post</span>
         </div>
         <div className={style.post_text}>
-          <input className={style.post_input} type="text" />
-          <input className={style.post_input_submit} type="submit" />
+          <input className={style.post_input} type="text" ref={newPostElement} onChange={updateNewPostText} value={props.ProfilePage.newPostTExt} />
+          <input className={style.post_input_submit} type="submit" onClick={addNewPost} />
         </div>
       </div>
       <div className={style.post_items}>

@@ -1,12 +1,14 @@
 
-import {renderDOM} from '../render';
+let renderDOM ;
 
 let state = {
 	ProfilePage: {
 		PostsData: [
 			{id: 1, avatar: "https://historyurok.com.ua/wp-content/uploads/2020/01/Aktor.jpg", name: "Will Smith", message: "Lorem ipsum dolor sit amet consectetur adipisicing elit.", likeCount: 10 },
 			{id: 2, avatar: "https://www.themoviedb.org/t/p/w235_and_h235_face/wo2hJpn04vbtmh0B9utCFdsQhxM.jpg", name: "Leonardo Dicaprio", message: "Lorem adipisicing elit.", likeCount: 7 }
-		]
+		],
+
+		newPostTExt: ""
 	},
 
 	DirectPage: {
@@ -38,22 +40,49 @@ let state = {
 	}
 }
 
-export let addDialogMessage = () => {
-	let post = {
-		id: 5,
-		message: state.DirectPage.newMessageText
-	};
+export const objectFunctions = {
+	DirectPage: {
+		addDialogMessage: () => {
+			let message = {
+				id: 5,
+				message: state.DirectPage.newMessageText
+			};
+		
+			state.DirectPage.MessagesData.push(message);
+			state.DirectPage.newMessageText = " ";
+			renderDOM();
+		},
 
-	state.DirectPage.MessagesData.push(post);
-	state.DirectPage.newMessageText = " ";
-	renderDOM(state)
+		updateMessageText: (changingText) => {
+			state.DirectPage.newMessageText = changingText;
+			renderDOM();
+		}
+	},
 
-	console.log(state.DirectPage.newMessageText)
-}
+	ProfilePage: {
+		addNewPost: () => {
+			let post = {
+				id: 3,
+				avatar: "https://static10.tgstat.ru/channels/_0/50/501ea5b34460856554eafe40d15a4c83.jpg",
+				name: "Thomas Shelby",
+				message: state.ProfilePage.newPostTExt,
+				likeCount: 0
+			};
+		
+			state.ProfilePage.PostsData.unshift(post);
+			state.ProfilePage.newPostTExt = " ";
+			renderDOM();
+		},
 
-export let updateMessageText = (changingText) => {
-	state.DirectPage.newMessageText = changingText;
-	renderDOM(state)
+		updateNewPostText: (changingText) => {
+			state.ProfilePage.newPostTExt = changingText;
+			renderDOM();
+		}
+	},
+
+	rerender: (observer) => {
+		renderDOM = observer;
+	}
 }
 
 export default state;
