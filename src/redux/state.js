@@ -1,4 +1,6 @@
 
+import {renderDOM} from '../render';
+
 let state = {
 	ProfilePage: {
 		PostsData: [
@@ -22,7 +24,9 @@ let state = {
 			{id: 2, message: "How are you?"},
 			{id: 3, message: "Do you go?"},
 			{id: 4, message: "Yes😂"},
-		]
+		],
+
+		newMessageText: ""
 	},
 
 	Sidebar: {
@@ -32,6 +36,24 @@ let state = {
 			{id: 3, name: "Kamila", avatar: "https://images.pexels.com/photos/1054251/pexels-photo-1054251.jpeg"}
 		]
 	}
+}
+
+export let addDialogMessage = () => {
+	let post = {
+		id: 5,
+		message: state.DirectPage.newMessageText
+	};
+
+	state.DirectPage.MessagesData.push(post);
+	state.DirectPage.newMessageText = " ";
+	renderDOM(state)
+
+	console.log(state.DirectPage.newMessageText)
+}
+
+export let updateMessageText = (changingText) => {
+	state.DirectPage.newMessageText = changingText;
+	renderDOM(state)
 }
 
 export default state;

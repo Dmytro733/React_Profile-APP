@@ -5,14 +5,17 @@ import MessageItem from "./Message/Message";
 
 
 const Dialogs = (props) => {
+  
   let DialogsElements = props.DirectPage.DialogsData.map(dialog => <DialogItem key={dialog.id} name={dialog.name} id={dialog.id} avatar={dialog.avatar} />)
   let MessagesElements = props.DirectPage.MessagesData.map(message => <MessageItem key={message.id} message={message.message} id={message.id} />)
+  let newMessageElement = React.createRef();
 
-  let newPostElement = React.createRef();
+  let addDialogMessageItem = () => {
+    props.addDialogMessage();
+  }
 
-  let addPost = () => {
-    let text = newPostElement.current.value;
-    alert(text)
+  let updateMessageText = () => {
+    props.updateMessageText(newMessageElement.current.value)
   }
 
   return (
@@ -24,8 +27,8 @@ const Dialogs = (props) => {
         <div className={style.messages}>
           {MessagesElements}
           <div className={style.typing_message}>
-            <textarea ref={newPostElement} rows="2"></textarea>
-            <button  onClick={addPost}>Send</button>
+            <textarea onChange={updateMessageText} ref={newMessageElement} rows="1" placeholder="type" value={props.DirectPage.newMessageText}></textarea>
+            <button  onClick={addDialogMessageItem}>Send</button>
           </div>
         </div>
       </div>
