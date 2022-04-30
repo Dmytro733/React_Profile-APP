@@ -24,8 +24,8 @@ const App = (props) => {
             <div className="App">
                 <div className='App_wrap_content'>
                   <Routes>
-                    <Route index path="/profile" element={ <Profile ProfilePage={props.state.ProfilePage} addNewPost={props.addNewPost} updateNewPostText={props.updateNewPostText} />} />
-                    <Route path="/dialogs" element={ <Dialogs DirectPage={props.state.DirectPage}  addDialogMessage={props.addDialogMessage} updateMessageText={props.updateMessageText} />} />
+                    <Route index path="/profile" element={ <Profile ProfilePage={props.state.ProfilePage} dispatch={props.dispatch} />} />
+                    <Route path="/dialogs" element={ <Dialogs DirectPage={props.state.DirectPage}  dispatch={props.dispatch} />} />
                   </Routes>
                 </div>
             </div>

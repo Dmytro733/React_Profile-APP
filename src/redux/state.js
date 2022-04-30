@@ -41,39 +41,35 @@ let store = {
 		}
 	},
 
-	addDialogMessage(){
-		let message = {
-			id: 5,
-			message: this._state.DirectPage.newMessageText
-		};
-	
-		this._state.DirectPage.MessagesData.push(message);
-		this._state.DirectPage.newMessageText = " ";
-		renderDOM();
-	},
-
-	updateMessageText(changingText){
-		this._state.DirectPage.newMessageText = changingText;
-		renderDOM();
-	},
-
-	addNewPost(){
-		let post = {
-			id: 3,
-			avatar: "https://static10.tgstat.ru/channels/_0/50/501ea5b34460856554eafe40d15a4c83.jpg",
-			name: "Thomas Shelby",
-			message: this._state.ProfilePage.newPostTExt,
-			likeCount: 0
-		};
-	
-		this._state.ProfilePage.PostsData.unshift(post);
-		this._state.ProfilePage.newPostTExt = " ";
-		renderDOM();
-	},
-
-	updateNewPostText(changingText){
-		this._state.ProfilePage.newPostTExt = changingText;
-		renderDOM();
+	dispatch(action){
+		if(action.type === "ADD-MESSAGE"){
+			let message = {
+				id: 5,
+				message: this._state.DirectPage.newMessageText
+			};
+		
+			this._state.DirectPage.MessagesData.push(message);
+			this._state.DirectPage.newMessageText = " ";
+			renderDOM();
+		}else if(action.type === "UPDATE-MESSAGE-TEXT"){
+			this._state.DirectPage.newMessageText = action.changingText;
+			renderDOM();
+		}else if(action.type === "ADD-POST"){
+			let post = {
+				id: 3,
+				avatar: "https://static10.tgstat.ru/channels/_0/50/501ea5b34460856554eafe40d15a4c83.jpg",
+				name: "Thomas Shelby",
+				message: this._state.ProfilePage.newPostTExt,
+				likeCount: 0
+			};
+		
+			this._state.ProfilePage.PostsData.unshift(post);
+			this._state.ProfilePage.newPostTExt = " ";
+			renderDOM();
+		}else if(action.type === "UPDATE-POST-TEXT"){
+			this._state.ProfilePage.newPostTExt = action.changingText;
+			renderDOM();
+		}
 	},
 
 	getState(){
