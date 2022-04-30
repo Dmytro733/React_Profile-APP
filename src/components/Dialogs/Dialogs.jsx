@@ -11,11 +11,11 @@ const Dialogs = (props) => {
   let newMessageElement = React.createRef();
 
   let addDialogMessageItem = () => {
-    props.objectFunctions_DirectPage.addDialogMessage();
+    props.addDialogMessage();
   }
 
   let updateMessageText = () => {
-    props.objectFunctions_DirectPage.updateMessageText(newMessageElement.current.value);
+    props.updateMessageText(newMessageElement.current.value);
   }
 
   return (

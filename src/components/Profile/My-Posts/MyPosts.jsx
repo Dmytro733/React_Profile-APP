@@ -3,15 +3,14 @@ import style from "./MyPosts.module.css";
 import Post from "./Post/Post";
 
 const MyPosts = (props) => {
-
   let newPostElement = React.createRef();
 
   let addNewPost = () => {
-    props.objectFunctions_ProfilePage.addNewPost();
+    props.addNewPost();
   }
 
   let updateNewPostText = () => {
-    props.objectFunctions_ProfilePage.updateNewPostText(newPostElement.current.value);
+    props.updateNewPostText(newPostElement.current.value);
   }
 
   let PostsElements = props.ProfilePage.PostsData.map(post => <Post key={post.id} avatar={post.avatar} name={post.name} message={post.message} likeCount={post.likeCount} />)
