@@ -1,17 +1,14 @@
 import React from "react";
 import style from "./MyPosts.module.css";
 import Post from "./Post/Post";
-import {addPostActionCreator, updatePostActionCreator} from "./../../../redux/state"
+import {addPostActionCreator, updatePostActionCreator} from "./../../../redux/reducerProfilePage"
 
 const MyPosts = (props) => {
-  let newPostElement = React.createRef();
-
   let addNewPost = () => {
     props.dispatch(addPostActionCreator());
   }
-
-  let updateNewPostText = () => {
-    props.dispatch(updatePostActionCreator(newPostElement.current.value));
+  let updateNewPostText = (event) => {
+    props.dispatch(updatePostActionCreator(event.target.value));
   }
 
   let PostsElements = props.ProfilePage.PostsData.map(post => <Post key={post.id} avatar={post.avatar} name={post.name} message={post.message} likeCount={post.likeCount} />)
@@ -23,7 +20,7 @@ const MyPosts = (props) => {
           <span>my post</span>
         </div>
         <div className={style.post_text}>
-          <input className={style.post_input} type="text" ref={newPostElement} onChange={updateNewPostText} value={props.ProfilePage.newPostTExt} />
+          <input className={style.post_input} type="text" onChange={updateNewPostText} value={props.ProfilePage.newPostTExt} />
           <input className={style.post_input_submit} type="submit" onClick={addNewPost} />
         </div>
       </div>

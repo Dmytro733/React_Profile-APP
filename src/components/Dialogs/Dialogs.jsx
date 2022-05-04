@@ -2,21 +2,20 @@ import React from "react";
 import DialogItem from "./DialogItem/DialogItem";
 import style from "./Dialogs.module.css";
 import MessageItem from "./Message/Message";
-import {addMessageActionCreator, updateMessageActionCreator} from "./../../redux/state"
+import {addMessageActionCreator, updateMessageActionCreator} from "./../../redux/reducerDirectPage"
 
 
 const Dialogs = (props) => {
   
   let DialogsElements = props.DirectPage.DialogsData.map(dialog => <DialogItem key={dialog.id} name={dialog.name} id={dialog.id} avatar={dialog.avatar} />)
   let MessagesElements = props.DirectPage.MessagesData.map(message => <MessageItem key={message.id} message={message.message} id={message.id} />)
-  let newMessageElement = React.createRef();
 
   let addDialogMessageItem = () => {
     props.dispatch(addMessageActionCreator());
   }
 
-  let updateMessageText = () => {
-    props.dispatch(updateMessageActionCreator(newMessageElement.current.value));
+  let updateMessageText = (event) => {
+    props.dispatch(updateMessageActionCreator(event.target.value));
   }
 
   return (
@@ -28,7 +27,7 @@ const Dialogs = (props) => {
         <div className={style.messages}>
           {MessagesElements}
           <div className={style.typing_message}>
-            <textarea onChange={updateMessageText} ref={newMessageElement} rows="1" placeholder="type" value={props.DirectPage.newMessageText}></textarea>
+            <textarea onChange={updateMessageText} rows="1" placeholder="type" value={props.DirectPage.newMessageText}></textarea>
             <button  onClick={addDialogMessageItem}>Send</button>
           </div>
         </div>

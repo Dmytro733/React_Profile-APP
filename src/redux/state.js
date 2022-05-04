@@ -1,8 +1,5 @@
-
-const ADD_MESSAGE = "ADD-MESSAGE";
-const UPDATE_MESSAGE_TEXT = "UPDATE-MESSAGE-TEXT";
-const ADD_POST = "ADD-POST";
-const UPDATE_POST_TEXT = "UPDATE-POST-TEXT";
+import reducerDirectPage from "./reducerDirectPage";
+import reducerProfilePage from "./reducerProfilePage";
 
 let renderDOM ;
 
@@ -47,34 +44,9 @@ let store = {
 	},
 
 	dispatch(action){
-		if(action.type === ADD_MESSAGE){
-			let message = {
-				id: 5,
-				message: this._state.DirectPage.newMessageText
-			};
-		
-			this._state.DirectPage.MessagesData.push(message);
-			this._state.DirectPage.newMessageText = " ";
-			renderDOM();
-		}else if(action.type === UPDATE_MESSAGE_TEXT){
-			this._state.DirectPage.newMessageText = action.changingText;
-			renderDOM();
-		}else if(action.type === ADD_POST){
-			let post = {
-				id: 3,
-				avatar: "https://static10.tgstat.ru/channels/_0/50/501ea5b34460856554eafe40d15a4c83.jpg",
-				name: "Thomas Shelby",
-				message: this._state.ProfilePage.newPostTExt,
-				likeCount: 0
-			};
-		
-			this._state.ProfilePage.PostsData.unshift(post);
-			this._state.ProfilePage.newPostTExt = " ";
-			renderDOM();
-		}else if(action.type === UPDATE_POST_TEXT){
-			this._state.ProfilePage.newPostTExt = action.changingText;
-			renderDOM();
-		}
+		this._state.ProfilePage = reducerProfilePage(action, this.getState().ProfilePage);
+		this._state.DirectPage = reducerDirectPage(action, this.getState().DirectPage);
+		renderDOM();
 	},
 
 	getState(){
@@ -86,21 +58,4 @@ let store = {
 	}
 
 }
-
-export const addMessageActionCreator = () =>{
-	return {type: ADD_MESSAGE}
-}
-
-export const updateMessageActionCreator = (text) =>{
-	return {type: UPDATE_MESSAGE_TEXT, changingText:text}
-}
-
-export const addPostActionCreator = () =>{
-	return {type: ADD_POST}
-}
-
-export const updatePostActionCreator = (text) =>{
-	return {type: UPDATE_POST_TEXT, changingText:text}
-}
-
 export default store;
