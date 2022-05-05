@@ -1,7 +1,16 @@
 const ADD_POST = "ADD-POST";
 const UPDATE_POST_TEXT = "UPDATE-POST-TEXT";
 
-const reducerProfilePage = (action, state) => {
+let initializationState = {
+	PostsData: [
+		{id: 1, avatar: "https://historyurok.com.ua/wp-content/uploads/2020/01/Aktor.jpg", name: "Will Smith", message: "Lorem ipsum dolor sit amet consectetur adipisicing elit.", likeCount: 10 },
+		{id: 2, avatar: "https://www.themoviedb.org/t/p/w235_and_h235_face/wo2hJpn04vbtmh0B9utCFdsQhxM.jpg", name: "Leonardo Dicaprio", message: "Lorem adipisicing elit.", likeCount: 7 }
+	],
+
+	newPostTExt: ""
+}
+
+const reducerProfilePage = (state = initializationState, action) => {
 	switch (action.type) {
 		case ADD_POST:
 			let post = {

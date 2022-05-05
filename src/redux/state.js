@@ -1,5 +1,6 @@
 import reducerDirectPage from "./reducerDirectPage";
 import reducerProfilePage from "./reducerProfilePage";
+import reducerSidebar from "./reducerSidebar";
 
 let renderDOM ;
 
@@ -46,6 +47,7 @@ let store = {
 	dispatch(action){
 		this._state.ProfilePage = reducerProfilePage(action, this.getState().ProfilePage);
 		this._state.DirectPage = reducerDirectPage(action, this.getState().DirectPage);
+		this._state.Sidebar = reducerSidebar(action, this.getState().Sidebar);
 		renderDOM();
 	},
 
@@ -53,7 +55,7 @@ let store = {
 		return this._state;
 	},
 
-	rerender(observer){
+	subscribe(observer){
 		renderDOM = observer;
 	}
 

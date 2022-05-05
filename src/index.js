@@ -3,7 +3,8 @@ import reportWebVitals from "./reportWebVitals";
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import store from "./redux/state";
+// import store from "./redux/state";
+import store from "./redux/reduxStore";
 
 let renderDOM = () => {
   ReactDOM.render(
@@ -15,7 +16,7 @@ let renderDOM = () => {
 };
 
 renderDOM();
-store.rerender(renderDOM);
+store.subscribe(() => renderDOM(store.getState()));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

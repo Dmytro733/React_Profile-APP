@@ -18,7 +18,7 @@ const App = (props) => {
           <div></div>
           <div></div>
         </div>
-        <Sidebar Sidebar={props.state.Sidebar} />
+        <Sidebar Sidebar={props.state.Sidebar} dispatch={props.dispatch} />
         <div className='main_content'>
           <div className="container">
             <div className="App">
