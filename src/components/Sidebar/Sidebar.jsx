@@ -5,7 +5,7 @@ const Sidebar = (props) => {
   return (
     <div className={style.sidebar}>
       <div>
-        <Friends DataFriends={props.Sidebar} />
+        <Friends friends={props.sidebarData.Friends} />
       </div>
     </div>
   );

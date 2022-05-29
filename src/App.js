@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import AnnouncmenteBar from './components/Announcement-Bar/AnnouncementBar';
-import Dialogs from './components/Dialogs/Dialogs';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
-import Sidebar from './components/Sidebar/Sidebar';
+import SidebarContainer from './components/Sidebar/SidebarContainer';
 
 
 const App = (props) => {
@@ -18,14 +18,15 @@ const App = (props) => {
           <div></div>
           <div></div>
         </div>
-        <Sidebar Sidebar={props.state.Sidebar} dispatch={props.dispatch} />
+        <SidebarContainer store={props.store} />
+        {/* <Sidebar Sidebar={props.state.Sidebar} dispatch={props.dispatch} /> */}
         <div className='main_content'>
           <div className="container">
             <div className="App">
                 <div className='App_wrap_content'>
                   <Routes>
-                    <Route index path="/profile" element={ <Profile ProfilePage={props.state.ProfilePage} dispatch={props.dispatch} />} />
-                    <Route path="/dialogs" element={ <Dialogs DirectPage={props.state.DirectPage}  dispatch={props.dispatch} />} />
+                    <Route index path="/profile" element={ <Profile store={props.store} />} />
+                    <Route path="/dialogs" element={ <DialogsContainer store={props.store} />} />
                   </Routes>
                 </div>
             </div>

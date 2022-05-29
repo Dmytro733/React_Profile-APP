@@ -7,7 +7,7 @@ let initializationState = {
 		{id: 2, avatar: "https://www.themoviedb.org/t/p/w235_and_h235_face/wo2hJpn04vbtmh0B9utCFdsQhxM.jpg", name: "Leonardo Dicaprio", message: "Lorem adipisicing elit.", likeCount: 7 }
 	],
 
-	newPostTExt: ""
+	newPostText: ""
 }
 
 const reducerProfilePage = (state = initializationState, action) => {
@@ -17,15 +17,15 @@ const reducerProfilePage = (state = initializationState, action) => {
 				id: 3,
 				avatar: "https://static10.tgstat.ru/channels/_0/50/501ea5b34460856554eafe40d15a4c83.jpg",
 				name: "Thomas Shelby",
-				message: state.newPostTExt,
+				message: state.newPostText,
 				likeCount: 0
 			};
 	
 			state.PostsData.unshift(post);
-			state.newPostTExt = " ";
+			state.newPostText = " ";
 			return state;
 		case UPDATE_POST_TEXT:
-			state.newPostTExt = action.changingText;
+			state.newPostText = action.changingText;
 			return state;
 		default:
 			return state;

@@ -1,12 +1,12 @@
 import ProfileInfo from "./Profile-Info/ProfileInfo";
 import MyPosts from "./My-Posts/MyPosts";
-import style from "./Profile.module.css";
+import MyPostsContainer from "./My-Posts/MyPostsContainer";
 
 const Profile = (props) => {
   return (
     <div>
       <ProfileInfo/>
-      <MyPosts ProfilePage={props.ProfilePage} dispatch={props.dispatch}/>
+      <MyPostsContainer store={props.store} />
     </div>
   );
 };
