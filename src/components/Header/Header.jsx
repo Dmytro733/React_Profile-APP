@@ -1,6 +1,7 @@
 import Logo from './Logo';
 import style from "./Header.module.css"
 import NavMenu from '../Nav-Menu/NavMenu';
+import React from "react";
 
 const Header = () => {
   return (

@@ -1,6 +1,6 @@
-import reducerSidebar from "../../../redux/reducerSidebar";
 import Friend from "./FriendItem/FriendItem";
 import style from "./Friends.module.css";
+import React from 'react';
 
 
 const Friends = (props) => {

@@ -1,27 +1,27 @@
-import React from "react";
+import { connect } from "react-redux";
 import {addMessageActionCreator, updateMessageActionCreator} from "./../../redux/reducerDirectPage"
 import Dialogs from "./Dialogs";
 
-
-const DialogsContainer = (props) => {
-
-  let state = props.store.getState();
-
-  let addDialogMessageItem = () => {
-    props.store.dispatch(addMessageActionCreator());
+let mapStateToProps = (state, ownProps) => {
+  return {
+    dialogsData: state.DirectPage.DialogsData,
+    messagesData: state.DirectPage.MessagesData,
+    newMessageText: state.DirectPage.newMessageText
   }
+}
 
-  let updateMessageText = (text) => {
-    props.store.dispatch(updateMessageActionCreator(text));
+let mapDispatchToProps = (dispatch) => {
+  return {
+    addDialogMessageItem: () => {
+      dispatch(addMessageActionCreator())
+    },
+
+    updateMessageText: (text) => {
+      dispatch(updateMessageActionCreator(text))
+    }
   }
+}
 
-  return (
-    <Dialogs updateMessageText={updateMessageText} 
-             addDialogMessageItem={addDialogMessageItem}
-             dialogsData={state.DirectPage.DialogsData}
-             messagesData={state.DirectPage.MessagesData}
-             newMessageText={state.DirectPage.newMessageText} />
-  );
-};
+const DialogsContainer = connect(mapStateToProps, mapDispatchToProps) (Dialogs);
 
 export default DialogsContainer;

@@ -8,7 +8,7 @@ import Profile from './components/Profile/Profile';
 import SidebarContainer from './components/Sidebar/SidebarContainer';
 
 
-const App = (props) => {
+const App = () => {
   return (
     <BrowserRouter>
       <div className="App-wrap">
@@ -18,15 +18,14 @@ const App = (props) => {
           <div></div>
           <div></div>
         </div>
-        <SidebarContainer store={props.store} />
-        {/* <Sidebar Sidebar={props.state.Sidebar} dispatch={props.dispatch} /> */}
+        <SidebarContainer />
         <div className='main_content'>
           <div className="container">
             <div className="App">
                 <div className='App_wrap_content'>
                   <Routes>
-                    <Route index path="/profile" element={ <Profile store={props.store} />} />
-                    <Route path="/dialogs" element={ <DialogsContainer store={props.store} />} />
+                    <Route index path="/profile" element={ <Profile/> } />
+                    <Route path="/dialogs" element={ <DialogsContainer />} />
                   </Routes>
                 </div>
             </div>

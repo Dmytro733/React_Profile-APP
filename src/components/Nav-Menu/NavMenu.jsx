@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import style from "./NavMenu.module.css";
+import React from "react";
 
 const NavMenu = () => {
   return (

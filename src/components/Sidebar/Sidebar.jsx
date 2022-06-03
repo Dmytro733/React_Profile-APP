@@ -1,5 +1,6 @@
 import style from "./Sidebar.module.css";
 import Friends from "./Friends/Friends";
+import React from 'react';
 
 const Sidebar = (props) => {
   return (

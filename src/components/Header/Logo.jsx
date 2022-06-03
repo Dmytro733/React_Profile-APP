@@ -1,5 +1,6 @@
 import logo from './cloud.png';
 import style from "./Header.module.css"
+import React from "react";
 
 const Logo = () => {
   return(
