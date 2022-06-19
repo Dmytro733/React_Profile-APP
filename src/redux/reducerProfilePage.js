@@ -13,27 +13,22 @@ let initializationState = {
 const reducerProfilePage = (state = initializationState, action) => {
 	switch (action.type) {
 		case ADD_POST:
-			{
-				let post = {
-					id: 3,
+			return {
+        ...state,
+				PostsData: [{
+					id: state.PostsData.length + 1,
 					avatar: "https://static10.tgstat.ru/channels/_0/50/501ea5b34460856554eafe40d15a4c83.jpg",
 					name: "Thomas Shelby",
 					message: state.newPostText,
 					likeCount: 0
-				};
-		
-				let stateCopy = {...state};
-        stateCopy.PostsData = [...state.PostsData];
-        stateCopy.PostsData.unshift(post);
-        stateCopy.newPostText = " ";
-        return stateCopy;
-			}
+				}, ...state.PostsData],
+        newPostText: ""
+      }
 		case UPDATE_POST_TEXT:
-			{
-				let stateCopy = {...state};
-				stateCopy.newPostText = action.changingText;
-				return stateCopy;
-			}
+			return {
+        ...state,
+        newPostText: action.changingText
+      }
 		default:
 			return state;
 	}

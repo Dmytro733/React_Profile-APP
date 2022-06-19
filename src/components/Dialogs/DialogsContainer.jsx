@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import {addMessageActionCreator, updateMessageActionCreator} from "./../../redux/reducerDirectPage"
 import Dialogs from "./Dialogs";
 
-let mapStateToProps = (state, ownProps) => {
+let mapStateToProps = (state) => {
   return {
     dialogsData: state.DirectPage.DialogsData,
     messagesData: state.DirectPage.MessagesData,

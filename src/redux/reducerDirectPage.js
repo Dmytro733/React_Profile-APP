@@ -24,24 +24,17 @@ let initializationState = {
 const reducerDirectPage = (state = initializationState, action) => {
   switch (action.type) {
     case ADD_MESSAGE:
-      {
-        let message = {
-          id: 5,
-          message: state.newMessageText,
-        };
-
-        let stateCopy = {...state};
-        stateCopy.MessagesData = [...state.MessagesData];
-        stateCopy.MessagesData.push(message);
-        stateCopy.newMessageText = " ";
-        return stateCopy;
+      return {
+        ...state,
+        MessagesData: [...state.MessagesData, {id: state.MessagesData.length + 1, message: state.newMessageText}],
+        newMessageText: ""
       }
     case UPDATE_MESSAGE_TEXT: 
-      {
-        let stateCopy = {...state};
-        stateCopy.newMessageText = action.changingText;
-        return stateCopy;
+      return {
+        ...state,
+        newMessageText: action.changingText
       }
+      
     default:
       return state;
   }
