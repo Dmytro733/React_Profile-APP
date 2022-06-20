@@ -17,6 +17,30 @@ a{
   text-decoration: none;
 }
 
+/**
+*BUTTONS
+**/
+
+.primary_button{
+  padding: 10px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  background: #1571bf;
+  color: white;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.primary_button:hover{
+  background: #1571bf85;
+  transition: all 0.5s;
+}
+
+/**
+*END BUTTONS
+**/
+
 .App-wrap{
   position: relative;
   display: grid;
@@ -70,4 +94,19 @@ a{
   background-position: center;
   background-size: auto;
   background-repeat: no-repeat;
+}
+
+/**
+*Sidebar general styles
+**/
+
+.wrap_box_sidebar{
+  background: #e7eef387;
+  border-radius: 5px;
+}
+
+.wrap_box_sidebar_title{
+  font-weight: 600;
+  padding: 10px;
+  font-size: 19px;
 }

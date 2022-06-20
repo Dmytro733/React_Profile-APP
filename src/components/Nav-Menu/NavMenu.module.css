@@ -16,6 +16,24 @@
   text-shadow: 0px 3px 10px #bcdfbc;
   font-weight: 700;
   letter-spacing: 2px;
+  position: relative;
+}
+
+.nav_item a::before{
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: white;
+  left: 0;
+  bottom: -8px;
+  transition: all 0.5s;
+}
+
+.nav_item a:hover::before,
+.nav_item a:focus::before{
+  width: 100%;
+  transition: all 0.5s;
 }
 
 .nav_item a span{

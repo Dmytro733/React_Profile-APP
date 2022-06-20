@@ -17,6 +17,9 @@ const NavMenu = () => {
       <div className={style.nav_item}>
         <NavLink to='/'><span>A</span>bout</NavLink>
       </div>
+      <div className={style.nav_item}>
+        <NavLink to='/finde_users'><span>F</span>inde<span>U</span>sers</NavLink>
+      </div>
     </nav>
   );
 }

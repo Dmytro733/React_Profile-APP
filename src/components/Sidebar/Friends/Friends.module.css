@@ -2,12 +2,15 @@ a{
     color: black;
 }
 
+.friends_wrap{
+    
+}
+
 .friends_items{
-    background: #e7eef387;
+    
     display: flex;
     padding: 10px;
     justify-content: space-around;
-    border-radius: 5px;
 }
 
 .friend_item{

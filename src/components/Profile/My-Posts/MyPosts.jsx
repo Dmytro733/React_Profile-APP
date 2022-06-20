@@ -21,7 +21,8 @@ const MyPosts = (props) => {
         </div>
         <div className={style.post_text}>
           <input className={style.post_input} type="text" onChange={onPostChancge} value={props.newPostText} />
-          <input className={style.post_input_submit} type="submit" onClick={onPostAdd} />
+          <button className="primary_button" type="button" onClick={onPostAdd}>Send</button>
+          {/* <input className={style.post_input_submit} type="submit" onClick={onPostAdd} /> */}
         </div>
       </div>
       <div className={style.post_items}>

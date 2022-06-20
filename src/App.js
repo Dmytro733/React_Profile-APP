@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import AnnouncmenteBar from './components/Announcement-Bar/AnnouncementBar';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import UsersContainer from './components/Finde-Users/UsersContainer';
 import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
 import SidebarContainer from './components/Sidebar/SidebarContainer';
@@ -26,6 +27,7 @@ const App = () => {
                   <Routes>
                     <Route index path="/profile" element={ <Profile/> } />
                     <Route path="/dialogs" element={ <DialogsContainer />} />
+                    <Route path="/finde_users" element={ <UsersContainer />} />
                   </Routes>
                 </div>
             </div>

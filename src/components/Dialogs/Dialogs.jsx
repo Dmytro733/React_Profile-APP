@@ -27,7 +27,7 @@ const Dialogs = (props) => {
           {MessagesElements}
           <div className={style.typing_message}>
             <textarea onChange={onUpdateMessage} rows="1" placeholder="type" value={props.newMessageText}></textarea>
-            <button  onClick={onAddMessage}>Send</button>
+            <button className="primary_button" onClick={onAddMessage}>Send</button>
           </div>
         </div>
       </div>
