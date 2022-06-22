@@ -1,120 +1,123 @@
-.dialogs_wrap{
-    
+.users_wrap{
+    max-width: 75%;
+    margin: auto;
 }
 
-.dialogs{
-    display: grid;
-    grid-template-areas: "dialogs-items messages";
-    grid-template-columns: 4fr 8fr;
+.users{
 }
 
-.dialogs_items{
-    grid-area: dialogs-items;
-    margin-right: 20px;
+.users_items{
 }
 
-.dialog{
+.user_item_wrap{
     display: flex;
     align-items: center;
     color: black;
     position: relative;
-    transition: all 0.5s;
     margin-bottom: 10px;
-    padding: 10px;
-}
-
-.dialog>div{
-    width: 40px;
-    height: 40px;
-    overflow: hidden;
-    position: relative;
-    border-radius: 50px;
-    margin-right: 20px;
-}
-
-.dialog>div .dialog_avatar{
-    position: absolute;
-    height: 100%;
-}
-
-.dialog::after{
-    content: "";
-    position: absolute;
-    z-index: -1;
-    left: 0px;
-    border-radius: 50px;
-    width: 0%;
-    height: 100%;
-    bottom: 0;
-    background: #ffffff40;
-    transition: all 0.5s;
-}
-
-.dialog:hover{
-    font-weight: 600;
-    transition: all 0.5s;
-}
-
-.dialog:hover::after{
-    width: 100%;
-    transition: all 0.5s;
-}
-
-.messages{
-    grid-area: messages;
-}
-
-.message{
-    height: 60px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;    
-}
-
-.messages .not_read{
-    font-weight: 600;
-}
-
-.messages .message .text,
-.messages .typing .typing_active{
-    display: block;
-}
-
-.messages .message .typing_active,
-.messages .typing .text{
-    display: none;
-}
-
-.messages .typing_message{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.messages .typing_message textarea{
-    width: 50%;
-    border-radius: 8px;
-    border: none;
-    padding: 10px 10px;
-    background: #ffffff8c;
-}
-
-.messages .typing_message textarea:focus-visible{
-    outline: none;
-}
-
-.messages .typing_message button{
-    padding: 10px 25px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    background: #1571bf;
-    color: white;
+    padding: 10px 15px;
     transition: all 0.5s;
     cursor: pointer;
 }
 
-.messages .typing_message button:hover{
-    background: #1571bf85;
+.user_item_wrap::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0px;
+    width: 100%;
+    height: 0%;
+    top: 0;
+    background: #ffffff40;
+    transition: all 0.5s;
+}
+
+.user_item_wrap:hover::after{
+    height: 100%;
+    transition: all 0.5s;
+}
+
+.user_item_wrap .follow_and_avatar{
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    align-items: center;
+}
+
+.user_item_wrap .user_avatar{
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 50px;
+}
+
+.user_item_wrap .user_avatar img{
+    position: absolute;
+    height: 100%;
+}
+
+.user_item_wrap .follow_and_avatar .to_follow{
+    margin-top: 10px;
+    background: #d7415d;
+    border: none;
+    color: white;
+    padding: 8px 25px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.user_item_wrap .follow_and_avatar .to_follow:hover{
+    background: #9d2e42;
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+.user_info .user_name{
+    font-size: 22px;
+}
+
+.user_info .user_location{
+    font-style: italic;
+    display: flex;
+    align-items: center;
+}
+
+.user_info .user_location span{
+    display: block;
+    width: 13px;
+    height: 22px;
+    background-image: url("./UserItem/clipart170231.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 5px;
+}
+
+.user_info .user_message{
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+.users .show_more{
+    display: flex;
+    justify-content: center;
+}
+
+.users .show_more button{
+    padding: 10px 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    background: #e7eef387;
+    transition: all 0.5s;
+    border-radius: 3px;
+}
+
+.users .show_more button:hover{
+    background: #c1d3df;
     transition: all 0.5s;
 }

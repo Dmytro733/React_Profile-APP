@@ -4,7 +4,7 @@ import UserItem from "./UserItem/UserItem";
 
 
 const Users = (props) => {
-  let UsersElements = props.usersData.map(user => <UserItem key={user.id} name={user.name} id={user.id} avatar={user.avatar} />)
+  let UsersElements = props.usersData.map(user => <UserItem key={user.id} name={user.name} id={user.id} avatar={user.avatar} country={user.country} city={user.city} message={user.message} />)
 
   let onAddMessage = () => {
     props.addDialogMessageItem();
@@ -15,10 +15,15 @@ const Users = (props) => {
   }
 
   return (
-    <div className={style.dialogs_wrap}>
-      <div className={style.dialogs}>
-        <div className={style.dialogs_items}>
+    <div className={style.users_wrap}>
+      <div className={style.users}>
+        <div className={style.users_items}>
           {UsersElements}
+        </div>
+        <div className={style.show_more}>
+          <button>
+            show more
+          </button>  
         </div>
       </div>
     </div>
