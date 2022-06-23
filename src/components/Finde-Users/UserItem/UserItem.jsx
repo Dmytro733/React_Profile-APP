@@ -4,14 +4,19 @@ import React from "react";
 
 const UserItem = (props) => {
   let path = '/user/' + props.id;
+
+  let follow = () => {
+    props.toogleFollow(props.id);
+  }
+
   return (
     <div className={style.user_item_wrap}>
       <div className={style.follow_and_avatar}>
         <div className={style.user_avatar}>
           <img src={props.avatar} alt="" />
         </div>
-        <button type="button" className={style.to_follow}>
-          follow
+        <button type="button" className={style.to_follow} onClick={follow}>
+          {props.followed ? "unfollow" : "follow"}
         </button>
       </div>
       <div className={style.user_info}>
@@ -20,10 +25,10 @@ const UserItem = (props) => {
         </NavLink>
         <div className={style.user_location}>
           <span></span>
-          {props.country}, {props.city} 
+          {props.location.country}, {props.location.city} 
         </div>
-        <div className={style.user_message}>
-          {props.message}
+        <div className={style.user_status}>
+          {props.status}
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { toogleFollowActionCreator } from "../../redux/reducerUsers";
 import Users from "./Users";
 
 let mapStateToProps = (state) => {
@@ -8,15 +9,11 @@ let mapStateToProps = (state) => {
 }
 
 let mapDispatchToProps = (dispatch) => {
-  // return {
-  //   addDialogMessageItem: () => {
-  //     dispatch(addMessageActionCreator())
-  //   },
-
-  //   updateMessageText: (text) => {
-  //     dispatch(updateMessageActionCreator(text))
-  //   }
-  // }
+  return {
+    toogleFollow: (userId) => {
+      dispatch(toogleFollowActionCreator(userId))
+    }
+  }
 }
 
 const UsersContainer = connect(mapStateToProps, mapDispatchToProps) (Users);
