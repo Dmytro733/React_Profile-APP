@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { toogleFollowActionCreator } from "../../redux/reducerUsers";
+import { setUsersActionCreator, toogleFollowActionCreator } from "../../redux/reducerUsers";
 import Users from "./Users";
 
 let mapStateToProps = (state) => {
@@ -12,6 +12,10 @@ let mapDispatchToProps = (dispatch) => {
   return {
     toogleFollow: (userId) => {
       dispatch(toogleFollowActionCreator(userId))
+    },
+
+    setUsers: (users) => {
+      dispatch(setUsersActionCreator(users))
     }
   }
 }
