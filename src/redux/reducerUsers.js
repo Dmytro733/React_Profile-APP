@@ -56,8 +56,6 @@ const reducerUsers = (state = initializationState, action) => {
         ...state,
         Users: state.Users.map(user => {
           if(user.id == action.userId){
-
-            console.log(action.userId)
             return user.followed 
             ? {...user, followed: false } 
             : {...user, followed: true } 

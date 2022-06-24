@@ -5,17 +5,13 @@ import React from "react";
 const UserItem = (props) => {
   let path = '/user/' + props.id;
 
-  let follow = () => {
-    props.toogleFollow(props.id);
-  }
-
   return (
     <div className={style.user_item_wrap}>
       <div className={style.follow_and_avatar}>
         <div className={style.user_avatar}>
           <img src={props.avatar} alt="" />
         </div>
-        <button type="button" className={style.to_follow} onClick={follow}>
+        <button type="button" className={style.to_follow} onClick={()=>{props.toogleFollowFunction(props.id)}}>
           {props.followed ? "unfollow" : "follow"}
         </button>
       </div>
