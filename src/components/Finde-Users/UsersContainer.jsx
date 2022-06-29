@@ -1,10 +1,13 @@
 import { connect } from "react-redux";
-import { setUsersActionCreator, toogleFollowActionCreator } from "../../redux/reducerUsers";
+import { setCurrentPageActionCreator, setTotalUsersCountActionCreator, setUsersActionCreator, toogleFollowActionCreator } from "../../redux/reducerUsers";
 import Users from "./Users";
 
 let mapStateToProps = (state) => {
   return {
-    usersData: state.UsersPage.Users
+    usersData: state.UsersPage.Users,
+    totalUsers: state.UsersPage.totalUsers,
+    perPage: state.UsersPage.perPage,
+    currentPage: state.UsersPage.currentPage
   }
 }
 
@@ -16,6 +19,14 @@ let mapDispatchToProps = (dispatch) => {
 
     setUsers: (users) => {
       dispatch(setUsersActionCreator(users))
+    },
+
+    setCurrentPage: (currentPage) => {
+      dispatch(setCurrentPageActionCreator(currentPage))
+    },
+
+    setTotalUsersCount: (usersCount) => {
+      dispatch(setTotalUsersCountActionCreator(usersCount))
     }
   }
 }

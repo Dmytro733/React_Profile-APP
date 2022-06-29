@@ -101,23 +101,34 @@
     font-weight: 700;
 }
 
-.users .show_more{
+/**
+**Pagination
+**/
+
+.pagination{
     display: flex;
     justify-content: center;
+    padding: 10px;
 }
 
-.users .show_more button{
-    padding: 10px 20px;
+.pagination .carrent_page{
     font-weight: 600;
-    text-transform: uppercase;
-    border: none;
-    cursor: pointer;
-    background: #e7eef387;
-    transition: all 0.5s;
-    border-radius: 3px;
 }
 
-.users .show_more button:hover{
-    background: #c1d3df;
+.pagination .page_item{
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
     transition: all 0.5s;
+}
+
+.pagination .page_item:hover,
+.pagination .page_item:focus{
+    background: #ffffff40;
+    transition: all 0.5s;
+}
+
+.pagination .page_item:last-child{
+    margin-right: 0;
 }

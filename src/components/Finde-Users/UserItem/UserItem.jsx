@@ -21,17 +21,17 @@ const UserItem = (props) => {
       </div>
       <div className={style.user_info}>
         <NavLink className={style.user_name} to={path}>
-          {props.name}
+          {props.first_name} {props.last_name}
         </NavLink>
         <div className={style.user_location}>
           <span></span>
           {
-            props.location.city 
+            props.location != undefined && props.location.city != undefined 
             ? props.location.city
-            : "London"
+            : "London, "
           }
           {
-            props.location.street 
+            props.location != undefined && props.location.street != undefined
             ? props.location.street
             : "Kulas Light"
           }
