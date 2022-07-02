@@ -7,7 +7,7 @@ let initializationState = {
 	Users: [],
   totalUsers: 0,
   perPage: 5,
-  currentPage: 3
+  currentPage: null
 }
 
 const reducerUsers = (state = initializationState, action) => {
