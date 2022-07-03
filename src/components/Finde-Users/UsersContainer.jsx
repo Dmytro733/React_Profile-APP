@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { setCurrentPageActionCreator, setTotalUsersCountActionCreator, setUsersActionCreator, toogleFollowActionCreator } from "../../redux/reducerUsers";
+import { setCurrentPageActionCreator, setTotalUsersCountActionCreator, setUsersActionCreator, toogleFollowActionCreator, toogleIsFetchingAC } from "../../redux/reducerUsers";
 import React from "react";
 import Users from "./Users";
 import * as axios from "axios";
@@ -11,20 +11,29 @@ class UsersContainer extends React.Component {
   }
 
   componentDidMount(){
-    axios.get(`https://reqres.in/api/users?per_page=${this.props.perPage}`)
-    .then(response => {
-      this.props.setUsers(response.data.data);
-      this.props.setTotalUsersCount(response.data.total);
-      this.props.setCurrentPage(response.data.page);
-    })
+    this.props.toogleIsFetching(true)
+    setTimeout(() => {
+      axios.get(`https://reqres.in/api/users?per_page=${this.props.perPage}`)
+      .then(response => {
+        this.props.toogleIsFetching(false)
+        this.props.setUsers(response.data.data);
+        this.props.setTotalUsersCount(response.data.total);
+        this.props.setCurrentPage(response.data.page);
+      })
+    }, 3000)
+    
   }
 
   onPageChanged = (currentPage) => {
     this.props.setCurrentPage(currentPage)
-    axios.get(`https://reqres.in/api/users?page=${currentPage}&per_page=${this.props.perPage}`)
-    .then(response => {
-      this.props.setUsers(response.data.data);
-    })
+    this.props.toogleIsFetching(true)
+    setTimeout(() => {
+      axios.get(`https://reqres.in/api/users?page=${currentPage}&per_page=${this.props.perPage}`)
+      .then(response => {
+        this.props.toogleIsFetching(false)
+        this.props.setUsers(response.data.data);
+      })
+    }, 3000)
   }
 
   render(){
@@ -35,6 +44,7 @@ class UsersContainer extends React.Component {
               currentPage={this.props.currentPage}
               toogleFollow={this.props.toogleFollow}
               usersData={this.props.usersData}
+              isFatching ={this.props.isFatching}
             />
   }  
 }
@@ -44,7 +54,8 @@ let mapStateToProps = (state) => {
     usersData: state.UsersPage.Users,
     totalUsers: state.UsersPage.totalUsers,
     perPage: state.UsersPage.perPage,
-    currentPage: state.UsersPage.currentPage
+    currentPage: state.UsersPage.currentPage,
+    isFatching: state.UsersPage.isFatching
   }
 }
 
@@ -64,6 +75,10 @@ let mapDispatchToProps = (dispatch) => {
 
     setTotalUsersCount: (usersCount) => {
       dispatch(setTotalUsersCountActionCreator(usersCount))
+    },
+
+    toogleIsFetching: (isFatching) => {
+      dispatch(toogleIsFetchingAC(isFatching))
     }
   }
 }

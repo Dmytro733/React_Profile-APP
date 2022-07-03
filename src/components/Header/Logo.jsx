@@ -1,4 +1,4 @@
-import logo from './cloud.png';
+import logo from '../../assets/images/cloud.png';
 import style from "./Header.module.css"
 import React from "react";
 

@@ -1,13 +1,15 @@
 const TOOGLE_FOLLOW = "TOOGLE-FOLLOW";
 const SET_USERS = "SET-USERS";
 const SET_CURRENT_PAGE = "SET-CURRENT-PAGE";
-const SET_TOTAL_USERS_COUNT = "SET-TOTAL-USERS-COUNT"
+const SET_TOTAL_USERS_COUNT = "SET-TOTAL-USERS-COUNT";
+const TOOGLE_IS_FETCHING = "TOOGLE-IS-FETCHING"
 
 let initializationState = {
 	Users: [],
   totalUsers: 0,
   perPage: 5,
-  currentPage: null
+  currentPage: null,
+  isFatching: true
 }
 
 const reducerUsers = (state = initializationState, action) => {
@@ -41,6 +43,11 @@ const reducerUsers = (state = initializationState, action) => {
         ...state,
         totalUsers: action.usersCount
       }
+    case TOOGLE_IS_FETCHING:
+      return{
+        ...state,
+        isFatching: action.isFatching
+      }
     default:
       return state;
   }
@@ -60,6 +67,10 @@ export const setCurrentPageActionCreator = (currentPage) =>{
 
 export const setTotalUsersCountActionCreator = (usersCount) =>{
 	return {type: SET_TOTAL_USERS_COUNT, usersCount}
+}
+
+export const toogleIsFetchingAC = (isFatching) =>{
+	return {type: TOOGLE_IS_FETCHING, isFatching}
 }
 
 
