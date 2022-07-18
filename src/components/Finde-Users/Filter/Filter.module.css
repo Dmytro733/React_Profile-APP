@@ -1,0 +1,32 @@
+.filter_wrap{
+  background: #e7eef387;
+  margin-bottom: 15px;
+}
+
+.filter{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.filter .count_item_page{
+  margin-left: 20px;
+}
+
+.filter .select_count_item{
+  margin-right: 20px;
+}
+
+.filter .select_count_item select{
+  width: 55px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  background: #ffffff94;
+  padding: 0 10px;
+}
+
+.filter .select_count_item select:focus-visible{
+  outline: none;
+}

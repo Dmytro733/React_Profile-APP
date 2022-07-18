@@ -10,7 +10,7 @@ const UserItem = (props) => {
       <div className={style.follow_and_avatar}>
         <div className={style.user_avatar}>
           {
-            props.avatar == undefined
+            props.avatar === undefined
             ? <img src="https://images.unsplash.com/photo-1470441623172-c47235e287ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80" alt="" />
             : <img src={props.avatar} alt="" />
           }
@@ -26,19 +26,19 @@ const UserItem = (props) => {
         <div className={style.user_location}>
           <span></span>
           {
-            props.location != undefined && props.location.city != undefined 
+            props.location !== undefined && props.location.city !== undefined 
             ? props.location.city
             : "London, "
           }
           {
-            props.location != undefined && props.location.street != undefined
+            props.location !== undefined && props.location.street !== undefined
             ? props.location.street
             : "Kulas Light"
           }
         </div>
         <div className={style.user_status}>
           {
-            props.status == undefined 
+            props.status === undefined 
             ? "I`m boss"
             : props.status
           }

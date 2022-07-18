@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { setCurrentPageActionCreator, setTotalUsersCountActionCreator, setUsersActionCreator, toogleFollowActionCreator, toogleIsFetchingAC } from "../../redux/reducerUsers";
+import { setCurrentPage, setTotalUsersCount, setUsers, toogleFollow, toogleIsFetching, onSelectCountItems } from "../../redux/reducerUsers";
 import React from "react";
 import Users from "./Users";
 import * as axios from "axios";
@@ -12,23 +12,38 @@ class UsersContainer extends React.Component {
 
   componentDidMount(){
     this.props.toogleIsFetching(true)
+    console.log(this.props)
     setTimeout(() => {
-      axios.get(`https://reqres.in/api/users?per_page=${this.props.perPage}`)
+      axios.get(`https://reqres.in/api/users`)
       .then(response => {
         this.props.toogleIsFetching(false)
         this.props.setUsers(response.data.data);
-        this.props.setTotalUsersCount(response.data.total);
         this.props.setCurrentPage(response.data.page);
+        this.props.onSelectCountItems(response.data.per_page);
+        this.props.setTotalUsersCount(response.data.total);
       })
-    }, 3000)
+    }, 2000)
     
   }
 
   onPageChanged = (currentPage) => {
-    this.props.setCurrentPage(currentPage)
-    this.props.toogleIsFetching(true)
+    this.props.setCurrentPage(currentPage);
+    this.props.toogleIsFetching(true);
     setTimeout(() => {
       axios.get(`https://reqres.in/api/users?page=${currentPage}&per_page=${this.props.perPage}`)
+      .then(response => {
+        this.props.toogleIsFetching(false);
+        this.props.setUsers(response.data.data);
+      })
+    }, 3000)
+  }
+
+  onCountItemsChanged = (countItems) => {
+    console.log(countItems)
+    this.props.onSelectCountItems(countItems);
+    this.props.toogleIsFetching(true);
+    setTimeout(() => {
+      axios.get(`https://reqres.in/api/users?per_page=${countItems}`)
       .then(response => {
         this.props.toogleIsFetching(false)
         this.props.setUsers(response.data.data);
@@ -40,7 +55,8 @@ class UsersContainer extends React.Component {
     return  <Users 
               totalUsers={this.props.totalUsers}
               perPage={this.props.perPage}
-              onPageChanged={this.onPageChanged} 
+              onPageChanged={this.onPageChanged}
+              onCountItemsChanged={this.onCountItemsChanged} 
               currentPage={this.props.currentPage}
               toogleFollow={this.props.toogleFollow}
               usersData={this.props.usersData}
@@ -59,28 +75,4 @@ let mapStateToProps = (state) => {
   }
 }
 
-let mapDispatchToProps = (dispatch) => {
-  return {
-    toogleFollow: (userId) => {
-      dispatch(toogleFollowActionCreator(userId))
-    },
-
-    setUsers: (users) => {
-      dispatch(setUsersActionCreator(users))
-    },
-
-    setCurrentPage: (currentPage) => {
-      dispatch(setCurrentPageActionCreator(currentPage))
-    },
-
-    setTotalUsersCount: (usersCount) => {
-      dispatch(setTotalUsersCountActionCreator(usersCount))
-    },
-
-    toogleIsFetching: (isFatching) => {
-      dispatch(toogleIsFetchingAC(isFatching))
-    }
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps) (UsersContainer);;
+export default connect( mapStateToProps, {toogleFollow, setUsers, setCurrentPage, setTotalUsersCount, toogleIsFetching, onSelectCountItems} ) (UsersContainer);;
