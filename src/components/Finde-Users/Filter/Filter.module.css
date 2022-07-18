@@ -1,5 +1,5 @@
 .filter_wrap{
-  background: #e7eef387;
+  position: relative;
   margin-bottom: 15px;
 }
 
@@ -8,6 +8,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  background: #e7eef387;
 }
 
 .filter .count_item_page{

@@ -14,10 +14,10 @@ let Users = (props) => {
 
   return( 
     <div className={style.users_wrap}>
+      <Filter perPage={props.perPage} isFatching={props.isFatching} onCountItemsChanged={props.onCountItemsChanged} />
       {props.isFatching 
       ? <Preloader /> 
       : <div className={style.users}>
-          <Filter perPage={props.perPage} onCountItemsChanged={props.onCountItemsChanged} />
           <div className={style.users_items}>
             {props.usersData.map(user => 
               <UserItem 

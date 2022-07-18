@@ -39,7 +39,6 @@ class UsersContainer extends React.Component {
   }
 
   onCountItemsChanged = (countItems) => {
-    console.log(countItems)
     this.props.onSelectCountItems(countItems);
     this.props.toogleIsFetching(true);
     setTimeout(() => {

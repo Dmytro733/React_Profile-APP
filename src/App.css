@@ -17,6 +17,10 @@ a{
   text-decoration: none;
 }
 
+.opacity{
+  opacity: 0.5;
+}
+
 /**
 *BUTTONS
 **/

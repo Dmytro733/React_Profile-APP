@@ -1,0 +1,15 @@
+.mini_preloader{
+  position: absolute;
+  height: 40px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.mini_preloader img{
+  width: 40px;
+  margin: auto;
+  display: block;
+}
