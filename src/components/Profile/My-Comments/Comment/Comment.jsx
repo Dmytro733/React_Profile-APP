@@ -1,7 +1,7 @@
-import style from "./Post.module.css";
+import style from "./Comment.module.css";
 import React from "react";
 
-const Post = (props) => {
+const Comment = (props) => {
   return (
     <div className={style.post_item}>
       <div className={style.post_avatar}>
@@ -11,10 +11,10 @@ const Post = (props) => {
       </div>
       <div className={style.post_content}>
         <div className={style.post_name}>
-          <span>{props.name}</span>
+          <span>{props.first_name} {props.last_name}</span>
         </div>
         <div className={style.post_text}>
-          {props.message}
+          {props.text}
         </div>
         <div className={style.post_buttons}>
           <div className={style.post_like}>
@@ -26,4 +26,4 @@ const Post = (props) => {
   );
 };
 
-export default Post;
+export default Comment;

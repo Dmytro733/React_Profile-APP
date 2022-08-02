@@ -12,7 +12,6 @@ class UsersContainer extends React.Component {
 
   componentDidMount(){
     this.props.toogleIsFetching(true)
-    console.log(this.props)
     setTimeout(() => {
       axios.get(`https://reqres.in/api/users`)
       .then(response => {
@@ -23,7 +22,6 @@ class UsersContainer extends React.Component {
         this.props.setTotalUsersCount(response.data.total);
       })
     }, 2000)
-    
   }
 
   onPageChanged = (currentPage) => {
@@ -55,7 +53,7 @@ class UsersContainer extends React.Component {
               totalUsers={this.props.totalUsers}
               perPage={this.props.perPage}
               onPageChanged={this.onPageChanged}
-              onCountItemsChanged={this.onCountItemsChanged} 
+              onCountItemsChanged={this.onCountItemsChanged}
               currentPage={this.props.currentPage}
               toogleFollow={this.props.toogleFollow}
               usersData={this.props.usersData}
@@ -74,4 +72,4 @@ let mapStateToProps = (state) => {
   }
 }
 
-export default connect( mapStateToProps, {toogleFollow, setUsers, setCurrentPage, setTotalUsersCount, toogleIsFetching, onSelectCountItems} ) (UsersContainer);;
+export default connect( mapStateToProps, {toogleFollow, setUsers, setCurrentPage, setTotalUsersCount, toogleIsFetching, onSelectCountItems} ) (UsersContainer);

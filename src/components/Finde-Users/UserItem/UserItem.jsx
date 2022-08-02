@@ -3,10 +3,10 @@ import style from "./../Users.module.css";
 import React from "react";
 
 const UserItem = (props) => {
-  let path = '/user/' + props.id;
-
+  let path = '/profile/'+props.id;
+  
   return (
-    <div className={style.user_item_wrap}>
+    <NavLink className={style.user_item_wrap} to={path}>
       <div className={style.follow_and_avatar}>
         <div className={style.user_avatar}>
           {
@@ -20,9 +20,9 @@ const UserItem = (props) => {
         </button>
       </div>
       <div className={style.user_info}>
-        <NavLink className={style.user_name} to={path}>
+        <div className={style.user_name}>
           {props.first_name} {props.last_name}
-        </NavLink>
+        </div>
         <div className={style.user_location}>
           <span></span>
           {
@@ -44,7 +44,7 @@ const UserItem = (props) => {
           }
         </div>
       </div>
-    </div>
+    </NavLink>
   )
 }
 

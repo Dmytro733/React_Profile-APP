@@ -11,7 +11,6 @@ let Users = (props) => {
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i);
   }
-
   return( 
     <div className={style.users_wrap}>
       <Filter perPage={props.perPage} isFatching={props.isFatching} onCountItemsChanged={props.onCountItemsChanged} />
@@ -29,7 +28,7 @@ let Users = (props) => {
                 location={user.address} 
                 status={user.status} 
                 followed={user.followed} 
-                toogleFollowFunction={props.toogleFollow} 
+                toogleFollowFunction={props.toogleFollow}
               />
             )}
           </div>

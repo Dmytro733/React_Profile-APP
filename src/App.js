@@ -1,40 +1,27 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+
 import './App.css';
-import AnnouncmenteBar from './components/Announcement-Bar/AnnouncementBar';
+
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Finde-Users/UsersContainer';
-import Header from './components/Header/Header';
-import Profile from './components/Profile/Profile';
-import SidebarContainer from './components/Sidebar/SidebarContainer';
+import Home from './components/Home/Home';
+import Layout from './components/Layout/Layout';
+import ProfileContainer from './components/Profile/ProfileContainer';
+
 
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <div className="App-wrap">
-        <AnnouncmenteBar/>
-        <Header/>
-        <div className="content_img">
-          <div></div>
-          <div></div>
-        </div>
-        <SidebarContainer />
-        <div className='main_content'>
-          <div className="container">
-            <div className="App">
-                <div className='App_wrap_content'>
-                  <Routes>
-                    <Route index path="/profile" element={ <Profile/> } />
-                    <Route path="/dialogs" element={ <DialogsContainer />} />
-                    <Route path="/users" element={ <UsersContainer />} />
-                  </Routes>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </BrowserRouter>
+    <Routes>
+      <Route to="/" element={ <Layout /> }>
+        <Route index element={ <Home /> } />
+        <Route path="profile" element={ <ProfileContainer /> } />
+        <Route path="profile/:id" element={ <ProfileContainer /> } />
+        <Route path="dialogs/*" element={ <DialogsContainer />} />
+        <Route path="users/*" element={ <UsersContainer />} />
+      </Route>
+    </Routes>
   );
 }
 

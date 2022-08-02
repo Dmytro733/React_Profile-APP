@@ -31,7 +31,8 @@
 }
 
 .nav_item a:hover::before,
-.nav_item a:focus::before{
+.nav_item a:focus::before,
+.nav_item [aria-current="page"]::before{
   width: 100%;
   transition: all 0.5s;
 }

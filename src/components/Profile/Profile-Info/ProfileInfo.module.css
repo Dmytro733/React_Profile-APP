@@ -32,6 +32,12 @@
   overflow: hidden;
 }
 
+.author_photo img{
+  height: 100%;
+  position: absolute;
+  width: auto;
+}
+
 .author_date_item{
   color: #000;
   font-family: inherit;
@@ -51,12 +57,4 @@
 .author_education{
   color: #00aeef;
   margin-left: 20px;
-}
-
-.author_photo img{
-  height: 210px;
-  position: absolute;
-  left: -50%;
-  width: auto;
-  transform: translate(15%, -10px);
 }
