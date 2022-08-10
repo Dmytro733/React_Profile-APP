@@ -17,9 +17,9 @@ let Filter = (props) => {
           {props.isFatching ? null : <span>{props.perPage} items</span>}
         </div>
         <div className={style.select_count_item}>
-          <select name={props.perPage} onChange={(event)=>{props.onCountItemsChanged(event.target.value)}}>
+          <select name={props.perPage} onChange={(event) => {props.onCountItemsChanged(event.target.value)}}>
             {countItems.map(countItem => {
-                return <option value={countItem} selected={props.perPage == countItem}>{countItem}</option>
+                return <option key={countItem} value={countItem} selected={props.perPage === countItem}>{countItem}</option>
               })
             }
           </select>

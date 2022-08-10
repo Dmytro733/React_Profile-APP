@@ -27,7 +27,7 @@ class ProfileContainer extends React.Component{
 
   render(){
     return(
-      <Profile {...this.props} setUserId={this.props.setUserId} />
+      <Profile {...this.props} />
     )
   }
 }
@@ -37,7 +37,6 @@ let mapStateToProps = (state) => {
     isFetching: state.ProfilePage.isFatching,
     profile: state.ProfilePage.profile,
     defaultUserId: state.ProfilePage.defaultUserId
-    
   }
 }
 

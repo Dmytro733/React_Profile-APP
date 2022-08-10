@@ -13,8 +13,8 @@ const Profile = (props) => {
       {props.isFetching
       ? <Preloader />
       : <>
-          <ProfileInfo isFetching={props.isFetching} profile={props.profile} />
-          <MyCommentsContainer isFetching={props.isFetching} profileComments={props.profile.comments} />
+          <ProfileInfo profile={props.profile} />
+          <MyCommentsContainer profileComments={props.profile.comments} />
         </>
       }
       

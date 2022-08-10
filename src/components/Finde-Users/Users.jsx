@@ -35,6 +35,7 @@ let Users = (props) => {
           <div className={style.pagination}>
             {pages.map(page => {
               return  <span 
+                        key={page}
                         className={props.currentPage === page ? `${style.carrent_page} ${style.page_item}` : style.page_item} 
                         onClick={()=>{props.onPageChanged(page)}}>{page}
                       </span> 
