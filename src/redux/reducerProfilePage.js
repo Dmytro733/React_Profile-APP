@@ -7,7 +7,7 @@ const SET_USER_ID = "SET-USER-ID"
 let initializationState = {
 	profile: null,
 	newCommentText: "",
-	defaultUserId: 1,
+	userId: 1,
   isFatching: true
 }
 
@@ -26,7 +26,7 @@ const reducerProfilePage = (state = initializationState, action) => {
 		case SET_USER_ID:
       return {
         ...state,
-        defaultUserId: action.userId
+        userId: action.userId
       }
 		case ADD_COMMENT:
 			return {

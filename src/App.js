@@ -16,8 +16,9 @@ const App = () => {
     <Routes>
       <Route to="/" element={ <Layout /> }>
         <Route index element={ <Home /> } />
-        <Route path="profile" element={ <ProfileContainer /> } />
-        <Route path="profile/:id" element={ <ProfileContainer /> } />
+        <Route path="profile" element={ <ProfileContainer /> } >
+          <Route path=":id" element={ <ProfileContainer /> } />
+        </Route>
         <Route path="dialogs/*" element={ <DialogsContainer />} />
         <Route path="users/*" element={ <UsersContainer />} />
       </Route>
